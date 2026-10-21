@@ -1,0 +1,33 @@
+{
+  "name": "action-ossutil",
+  "keywords": [],
+  "description": "GitHub Action to use Alibaba Cloud OSS Util",
+  "version": "1.0.0",
+  "author": "Evan Wu <info@wupeize.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/main.ts -o dist --minify",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/broctagon/action-ossutil.git"
+  },
+  "bugs": {
+    "url": "https://github.com/broctagon/action-ossutil/issues"
+  },
+  "homepage": "https://github.com/broctagon/action-ossutil#readme",
+  "dependencies": {
+    "@actions/core": "^3.0.1",
+    "@actions/exec": "^3.0.0",
+    "@actions/tool-cache": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@vercel/ncc": "^0.45.0",
+    "typescript": "6.0.3"
+  }
+}
