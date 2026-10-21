@@ -28,7 +28,6 @@ async function main(): Promise<void> {
         core.addPath(toolDir);
         core.setOutput("ossutil-path", binary);
         core.setOutput("ossutil-version", version);
-        core.info(`ossutil ${version} 已就绪: ${binary}`);
 
         core.exportVariable("OSS_REGION", region);
         if (endpoint) core.exportVariable("OSS_ENDPOINT", endpoint);

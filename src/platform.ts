@@ -97,7 +97,6 @@ export async function download(
     const expected = expectedChecksum(version, platform, arch, variant);
 
     const downloadUrl = url(version, platform, arch, variant);
-    core.info(`下载: ${downloadUrl}`);
 
     const archive = await tc.downloadTool(downloadUrl);
 
@@ -106,7 +105,6 @@ export async function download(
         .update(fs.readFileSync(archive))
         .digest("hex");
     verifyChecksum(actual, expected);
-    core.info("SHA256 校验通过");
 
     const extracted = await tc.extractZip(archive);
     const name = binaryName(platform);
