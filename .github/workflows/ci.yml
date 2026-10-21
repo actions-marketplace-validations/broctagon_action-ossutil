@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  action-ossutil:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: |
+          npm install
+          npm run typecheck
+          npm run test
+          npm run build
